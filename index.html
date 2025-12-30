@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Happy New Year 2026</title>
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      overflow: hidden;
+    }
+
+    .wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    video {
+      max-width: 100vw;
+      max-height: 100vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .tap {
+      position: fixed;
+      bottom: 6%;
+      width: 100%;
+      text-align: center;
+      color: white;
+      font-size: 14px;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <video
+      id="video"
+      src="2026umadoshi.mp4"
+      autoplay
+      muted
+      playsinline
+      loop>
+    </video>
+  </div>
+
+  <div class="tap">
+    画面をタップすると音が出ます
+  </div>
+
+  <script>
+    document.body.addEventListener('click', () => {
+      const v = document.getElementById('video');
+      if (v.muted) {
+        v.muted = false;
+        v.play();
+        document.querySelector('.tap').style.display = 'none';
+      }
+    });
+  </script>
+
+</body>
+</html>
